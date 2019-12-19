@@ -452,12 +452,13 @@ class Sca (Utils, Roc):
             l =  line.split(" ")
             if (len(l)==2) : l.append('0')
             self.mat.append([int(x,0) for x in l[:-1]]+[float(l[-1])])
- 
+        return mat 
+
     #--------------------------------------------------------------------------------
 
     #--------------------------------------------------------------------------------    
        
-    def MFTEN_execute_cmd(self, debug = None):
+    def MFTEN_execute_cmd(self, debug = None, mat):
         """
         MFT function to execute - wr and rd - what was loaded and saved in MFTEN_load
         """
