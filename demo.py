@@ -30,10 +30,11 @@ class GuiApp(Frame):
         label = Label(root, text= e[1][2], width=20, font=("bold",10))
         label.place(x=70,y=200)
     
-    def change_value(self, e,b): #does not change ...
+    def change_value(self, e,b): 
         e[1][0] = 55555
         print(e[1][0],b[1][0])
         print(e,b)
+
     def createWidgets(self, b):                                      
         print(" In createWidgers ")
         QUIT = Button(self, fg= "red", text = "Q", command = self.quit)
@@ -115,7 +116,7 @@ if __name__ == '__main__' :
     print("----------------------")
     print(b)
 
-    t1.join
+    t1.join()
     t.join()
 
     del b
