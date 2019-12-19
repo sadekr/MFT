@@ -1,0 +1,345 @@
+######### GBT-SCA Disk0 Management #########
+#
+## DAC Management
+# WR-then-RD DAC A (0) Output to 0x4F : cmd=0x10 then cmd=0x11
+0x150e0010 0x5A000000
+0x150f0011 0x00000000
+#
+# WR-then-RD DAC B (1) Output to 0x8F : cmd=0x20 then cmd=0x21
+0x150e0020 0x5A000000
+0x150f0021 0x00000000
+#
+# WR-then-RD DAC C (2) Output to 0xCF : cmd=0x30 then cmd=0x31
+0x150e0030 0x5A000000
+0x150f0031 0x00000000
+#
+# WR-then-RD DAC D (3) Output to 0xFF : cmd=0x40 then cmd=0x41
+0x150e0040 0x5A000000
+0x150f0041 0x00000000 0.0025
+#
+## Switch on the GPIO #4
+# WR-then-RD Set GPIO outputs to 1 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000010
+0x020c0011 0x00000000 0.0025
+#
+## ADC Management  
+# WR-then-RD set I_BB Z2 multiplexer 0  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000000
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_D Z3 multiplexer 1  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000001
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_D Z3 multiplexer 2  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000002
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_D Z2 multiplexer 3  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000003
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_D Z2 multiplexer 4 : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000004
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set L_up Z3 multiplexer 5 : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000005
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set L_up Z2 multiplexer 6  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000006
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+## Switch off the GPIO #4
+# WR-then-RD Set GPIO outputs to 0 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000000
+0x020c0011 0x00000000 0.0025
+#
+#
+#
+## DAC Management
+# WR-then-RD DAC A (0) Output to 0x4F : cmd=0x10 then cmd=0x11
+0x150e0010 0x80000000
+0x150f0011 0x00000000
+#
+# WR-then-RD DAC B (1) Output to 0x8F : cmd=0x20 then cmd=0x21
+0x150e0020 0x80000000
+0x150f0021 0x00000000
+#
+# WR-then-RD DAC C (2) Output to 0xCF : cmd=0x30 then cmd=0x31
+0x150e0030 0x80000000
+0x150f0031 0x00000000
+#
+# WR-then-RD DAC D (3) Output to 0xFF : cmd=0x40 then cmd=0x41
+0x150e0040 0x80000000
+0x150f0041 0x00000000 0.0025
+#
+## Switch on the GPIO #5
+# WR-then-RD Set GPIO outputs to 1 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000020
+0x020c0011 0x00000000 0.0025
+#
+## ADC Management  
+# WR-then-RD set I_BB Z3 multiplexer 7  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000007
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_A Z2 multiplexer 8  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000008
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set L_up Z0 multiplexer 9  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000009
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_A Z2 multiplexer 10  : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000A
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set L_up Z1 multiplexer 11 : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000B
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_D Z0 multiplexer 12 : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000C
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_A Z3 multiplexer 13  : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000D
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+## Switch off the GPIO #5
+# WR-then-RD Set GPIO outputs to 0 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000000
+0x020c0011 0x00000000 0.0025
+#
+#
+#
+## DAC Management
+# WR-then-RD DAC A (0) Output to 0x4F : cmd=0x10 then cmd=0x11
+0x150e0010 0x9C000000
+0x150f0011 0x00000000
+#
+# WR-then-RD DAC B (1) Output to 0x8F : cmd=0x20 then cmd=0x21
+0x150e0020 0x9C000000
+0x150f0021 0x00000000
+#
+# WR-then-RD DAC C (2) Output to 0xCF : cmd=0x30 then cmd=0x31
+0x150e0030 0x9C000000
+0x150f0031 0x00000000
+#
+# WR-then-RD DAC D (3) Output to 0xFF : cmd=0x40 then cmd=0x41
+0x150e0040 0x9C000000
+0x150f0041 0x00000000 0.0025
+#
+## Switch on the GPIO #6
+# WR-then-RD Set GPIO outputs to 1 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000040
+0x020c0011 0x00000000 0.0025
+#
+## ADC Management  
+# WR-then-RD set I_D Z0 multiplexer 14  : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000E
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_A Z3 multiplexer 15  : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000000F
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_D Z1 multiplexer 16  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000010
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_D Z1 multiplexer 17  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000011
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_BB Z0 multiplexer 18 : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000012
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_A Z0 multiplexer 19 : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000013
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_A Z0 multiplexer 20  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000014
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+## Switch off the GPIO #6
+# WR-then-RD Set GPIO outputs to 0 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000000
+0x020c0011 0x00000000 0.0025
+#
+#
+#
+## DAC Management
+# WR-then-RD on DAC A (0) Output to 0x4F : cmd=0x10 then cmd=0x11
+0x150e0010 0x57000000
+0x150f0011 0x00000000
+#
+# WR-then-RD DAC B (1) Output to 0x8F : cmd=0x20 then cmd=0x21
+0x150e0020 0x57000000
+0x150f0021 0x00000000
+#
+# WR-then-RD DAC C (2) Output to 0xCF : cmd=0x30 then cmd=0x31
+0x150e0030 0x57000000
+0x150f0031 0x00000000
+#
+# WR-then-RD DAC D (3) Output to 0xFF : cmd=0x40 then cmd=0x41
+0x150e0040 0x57000000
+0x150f0041 0x00000000 0.0025
+#
+## Switch on the GPIO #7
+# WR-then-RD Set GPIO outputs to 1 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000080
+0x020c0011 0x00000000 0.0025
+#
+## ADC Management  
+# WR-then-RD set I_BB Z1 multiplexer 21  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000015
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set I_A Z1 multiplexer 22  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000016
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set U_A Z1 multiplexer 23  : cmd=0x30 then cmd=0x31
+0x140b0030 0x00000017
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set T multiplexer 24 : cmd=0x30 then cmd=0x31 #TO ADD CURRENT_ENABLE
+0x140b0030 0x00000018
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set T_amb multiplexer 25 : cmd=0x30 then cmd=0x31 #TO ADD CURRENT_ENABLE
+0x140b0030 0x00000019
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set Humidity multiplexer 26 : cmd=0x30 then cmd=0x31
+0x140b0030 0x0000001A
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+# WR-then-RD set T_PSU_GBT multiplexer 27  : cmd=0x30 then cmd=0x31 #TO ADD CURRENT_ENABLE
+0x140b0030 0x0000001B
+0x140c0031 0x00000000
+#
+## Start conversion and read conversion data : cmd=0xB2 then cmd=0x51
+0x141100B2 0x00000000
+0x14100051 0x00000000 0.0025
+#
+## Switch off the GPIO #7
+# WR-then-RD Set GPIO outputs to 0 : cmd=0x10 data = 0x00000010
+0x020b0010 0x00000000
+0x020c0011 0x00000000 0.0025
+#
+############################################
