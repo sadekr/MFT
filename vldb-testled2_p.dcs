@@ -1,0 +1,14 @@
+############################################################
+# Access to VLDB SCA registers of VLDB.
+# Line format : 0x$ch$tr00$cmd (32 bits) 0xdata (32 bits)
+############################################################
+# Switch off the LED on GPIO #18 and #21 
+# WR-then-RD Set GPIO outputs to 0 : cmd=0x10 data = 0x00000000
+0x020b0010 0x00000000
+0x020c0011 0x00000000 2.
+#
+## Switch on the LED on GPIO #18 and #21 
+# WR-then-RD Set GPIO outputs to 1 : cmd=0x10 data = 0x00240000
+0x020b0010 0x00240000
+0x020c0011 0x00000000 2.
+#
