@@ -1,0 +1,35 @@
+############################################################
+# Access to VLDB SCA registers of VLDB.
+# Line format : 0x$ch$tr00$cmd (32 bits) 0xdata (32 bits)
+############################################################
+ #
+######### GBT-SCA main configuration #########
+#
+## Enable GPIO + Disable I2C(4..0) and SPI.
+# WR-then-RD CONTROL REG B : cmd=0x02 data=0x04
+0x00030002 0x04000000
+0x00040003 0x00000000
+#
+## Disable  I2C(12..5).
+# WR-then-RD CONTROL REG C : cmd=0x04 data=0x00
+0x00050004 0x00000000
+0x00060005 0x00000000
+#
+## Enable ADC + Disable  I2C(13..15) and JTAG.
+# WR-then-RD CONTROL REG D : cmd=0x06 data=0xf0
+0x00070006 0xf8000000
+0x00080007 0x00000000
+#
+# WR-then-RD Set GPIO direction : cmd=0x20 data = 0x00240000 
+0x02090020 0x000000F0 #we allowed this because we want access to GPIO 4 5 6 7 = F0 
+0x020a0021 0x00000000
+#
+#
+## RD SCA v1 Identifier
+0x14010090 0x000000aa
+0x14020091 0x00000001
+#
+## RESET-then-RD SEU Counter
+# 0x130900F0 0x00000000 does not work !
+# 0x130a00F1 0x00000000 does not work !
+##
