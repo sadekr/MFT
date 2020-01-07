@@ -452,24 +452,24 @@ class Sca (Utils, Roc):
             l =  line.split(" ")
             if (len(l)==2) : l.append('0')
             self.mat.append([int(x,0) for x in l[:-1]]+[float(l[-1])])
-        return mat 
 
     #--------------------------------------------------------------------------------
 
     #--------------------------------------------------------------------------------    
        
-    def MFTEN_execute_cmd(self, debug = None, mat):
+    def MFTEN_execute_cmd(self, debug = None, mat = None):
         """
         MFT function to execute - wr and rd - what was loaded and saved in MFTEN_load
         """
-        for i in range(len(self.mat)): # loop to send the previously saved sequence (mat) to execution
-                    sca_int = self.mat[i][0] 
-                    data_int = self.mat[i][1]
+        if (mat is None) : mat = self.mat
+        for i in range(len(mat)): # loop to send the previously saved sequence (mat) to execution
+                    sca_int = mat[i][0] 
+                    data_int = mat[i][1]
                     trid = None
                     ret = 1
                     while(ret == 1) :
                         self.wr(sca_int, data_int, 1, trid, debug)
-                        time.sleep(self.mat[i][2])
+                        time.sleep(mat[i][2])
                         ret = self.rd(debug)
         print("End of event")
 
