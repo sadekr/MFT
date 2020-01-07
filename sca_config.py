@@ -93,42 +93,44 @@ def main():
     #sys.stdout = dcsLogFile
     
     sca.MidCfgFile(dcsFileName)
-    mat=sca.MFTEN_load(debug)
-    sca.MFTEN_execute_cmd(debug, mat)
-    global h
+    sca.MFTEN_load(debug)
+    sca.MFTEN_execute_cmd(debug)
+    h = False
     if k==1 :
         h=True
     #dcsLogFile.close()
     sys.stdout = stdoutBackup
 
-def sequence_loop(sq):
+    return sca, h
+
+def sequence_loop(sq, sca):
     existing_shm=shared_memory.SharedMemory(name='SM1')
     mat=np.ndarray(sq.shape, dtype=sq.dtype, buffer=existing_shm.buf)
-    while(h)
-         sca.MFTEN_execute_cmd(debug,mat)#
+    while(True)
+         sca.MFTEN_execute_cmd(debug,mat) 
     del mat
     existing_shm.close()
 
 if __name__ == '__main__' :
-    main()
+    sca, h = main()
 
     if h :
-        sca= Sca(id_card, 2, gbt_ch, board, debug) ##
+        #sca= Sca(id_card, 2, gbt_ch, board, debug) ##
 
         root = Tk()
         root.geometry('500x500')
         gui = GuiApp(master=root)
 
-        mat=sca.MFTEN_load(debug) 
-        mat=np.array(mat)
+        mat=np.array(sca.mat)
 
         shm= shared_memory.SharedMemory(name='SM1', create=True, size=mat.nbytes)
         sq=np.ndarray(mat.shape, dtype=mat.dtype, buffer=shm.buf) 
         sq[:]=mat[:]
+        #sca.mat=sq #
 
-        t1=multiprocessing.Process(target=gui.createWidgets, args=(sq,))
+        t1=multiprocessing.Process(target=gui.createWidgets, args=(sca.mat,))
         t1.start()
-        t2=multiprocessing.Process(target=sequence_loop, args=(sq,))
+        t2=multiprocessing.Process(target=sequence_loop, args=(sq,sca,))
         t2.start()
         t1.join()
         t2.join()
